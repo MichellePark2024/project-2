@@ -17,12 +17,13 @@
           class="question-card__icon"
           src="./assets/bookmark.png"
           alt="bookmark"
-        />
+          data-js="first-bookmark"/>
+
         <h2 class="question-card__title">
           What property flips the axes of flexbox
         </h2>
-        <button class="question-card__button">show answer</button>
-        <p class="question-card__answer"></p>
+        <button class="question-card__button" data-js="answer-button">show answer</button>
+        <p class="question-card__answer hidden" data-js="answer">flex direction</p>
         <div class="question-card__tags">
           <div class="question-card__tag">#html</div>
           <div class="question-card__tag">#css</div>
@@ -34,10 +35,11 @@
           class="question-card__icon question-card__icon--active"
           src="./assets/bookmark_filled.png"
           alt="bookmark filled"
+          data-js="second-bookmark"
         />
         <h2 class="question-card__title">Why is accessibility important?</h2>
-        <button class="question-card__button">show answer</button>
-        <p class="question-card__answer"></p>
+        <button class="question-card__button" >show answer</button>
+        <p class="question-card__answer hidden" data-js="answer" >adfadfadf</p>
         <div class="question-card__tags">
           <div class="question-card__tag">#html</div>
           <div class="question-card__tag">#accessibility</div>
@@ -80,5 +82,6 @@
         <img class="footer__icon" src="./assets/profile.png" alt="profile" />
       </a>
     </footer>
+    <script src="./js/index.js" defer></script>
   </body>
 </html>
