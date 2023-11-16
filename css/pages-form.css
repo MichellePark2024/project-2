@@ -1,3 +1,16 @@
+body {
+  margin: 0;
+  font-family: system-ui;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background-color: #bac4c9;
+  transition: 0.4s ease;
+}
+
 .profile,
 .settings {
   padding: 20px 40px;

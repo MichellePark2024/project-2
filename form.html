@@ -23,19 +23,26 @@
                   maxlength="150"
                   required
                   data-js="question-input"
-                ></textarea>
+                ></textarea><br>
+                <small class="form__character-count"
+        >(<span data-js="amountLeft"></span> characters left)</small
+      >
       <p></p>
     
                 <label for="answer">Your answer</label><br>
                 <textarea id="answer" name="answer" rows="4" cols="50" maxlength="150" require data-js="answer-input"></textarea>
+                <br>
+                <small class="form__character-count"
+        >(<span data-js="amountLeft"></span> characters left)</small>
                 <p></p>
                 <label for="age">Tag</label><br>
                 <input type="text" name="tag" id="tag" min="16" max="50" data-js="tags-input" />
                 <p></p>
-                <button type="submit">Submit!</button>
+                <button type="submit" class="submitBtn" data-js="submitBtn">Submit!</button>
               </fieldset>
         </form>
-        <div clss="question-list"></div>
+        <br>
+        
         
     </main>
     <footer class="footer">
@@ -64,6 +71,6 @@
             />
           </a>
       </footer>
-    <script src="./js/index.js" defer></script>    
+    <script src="./js/form.js" defer></script>    
 </body>
 </html>
