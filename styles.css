@@ -2,6 +2,7 @@
 @import "./css/components.css";
 @import "./css/pages-home.css";
 @import "./css/pages-profile.css";
+@import "./css/pages-form.css.css";
 
 .hidden {
     display: none;

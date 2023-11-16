@@ -22,20 +22,21 @@
                   cols="50"
                   maxlength="150"
                   required
+                  data-js="question-input"
                 ></textarea>
       <p></p>
     
                 <label for="answer">Your answer</label><br>
-                <textarea id="answer" name="answer" rows="4" cols="50" maxlength="150" required></textarea>
+                <textarea id="answer" name="answer" rows="4" cols="50" maxlength="150" require data-js="answer-input"></textarea>
                 <p></p>
                 <label for="age">Tag</label><br>
-                <input type="text" name="tag" id="tag" min="16" max="50" />
+                <input type="text" name="tag" id="tag" min="16" max="50" data-js="tags-input" />
                 <p></p>
                 <button type="submit">Submit!</button>
               </fieldset>
-              
-
         </form>
+        <div clss="question-list"></div>
+        
     </main>
     <footer class="footer">
         <a href="index.html" class="footer__link">
