@@ -26,4 +26,3 @@ answerBtn.addEventListener('click', () => {
     }
 
     })
-    

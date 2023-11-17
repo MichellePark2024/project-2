@@ -1,28 +1,31 @@
 const form = document.querySelector('[data-js="form"]');
 const submitBtn = document.querySelector('[data-js="submitBtn"]');
-// const amountLeft = document.querySelector('[data-js="amountLeft"]');
-// const maxLength = questionElement.getAttribute("maxlength");
+const questionAmountLeft = document.querySelector('[data-js="question-amountLeft"]');
+const ansserAmountLeft = document.querySelector('[data-js="answer-amountLeft"]');
+const questionInput = document.querySelector('[data-js="question-input"]');
+const answerInput = document.querySelector('[data-js="answer-input"]');
+const maxlength = 150;
 
+questionInput.addEventListener("input", (event) => {
+  const userInputLength = event.target.value.length
+  questionAmountLeft.textContent = maxlength - userInputLength
+})
 
-// const updateAmountLeft = () => {
-//     const remainingCharacters = maxLength - questionElement.value.length;
-//     amountLeft.innerText = remainingCharacters;
-// };
+answerInput.addEventListener("input", (event) => {
+  const answerInputLength = event.target.value.length
+  ansserAmountLeft.textContent = maxlength - answerInputLength
+})
 
-// updateAmountLeft();
-
-// questionElement.addEventListener("input", () => {
-//     updateAmountLeft();
-// });
 
 submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
     const formData = new FormData(form);
     const submittedData = Object.fromEntries(formData); 
-    console.log(submittedData)
+    // console.log(submittedData)
 
     const newCard = document.createElement("section");
+    
     newCard.innerHTML = `<img
     class="question-card__icon"
     src="./assets/bookmark.png"
@@ -42,6 +45,8 @@ submitBtn.addEventListener("click", (e) => {
   document.body.append(newCard);
 
 })
+
+
 
 
 
