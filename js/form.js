@@ -1,3 +1,5 @@
+// import { answerBtn } from "./index.js";
+
 const form = document.querySelector('[data-js="form"]');
 const submitBtn = document.querySelector('[data-js="submitBtn"]');
 const questionAmountLeft = document.querySelector('[data-js="question-amountLeft"]');
@@ -15,6 +17,13 @@ answerInput.addEventListener("input", (event) => {
   const answerInputLength = event.target.value.length
   ansserAmountLeft.textContent = maxlength - answerInputLength
 })
+
+// 페이지 로드 시 초기 글자 수 표시
+document.addEventListener("DOMContentLoaded", () => {
+  const event = new Event("input");
+  questionInput.dispatchEvent(event);
+  answerInput.dispatchEvent(event);
+});
 
 
 submitBtn.addEventListener("click", (e) => {
@@ -39,11 +48,45 @@ submitBtn.addEventListener("click", (e) => {
   <p class="question-card__answer hidden" data-js="answer">${submittedData.answer}</p>
   <div class="question-card__tags">
     <div class="question-card__tag">${submittedData.tag}</div>
-    
   </div>
   `
+ 
   document.body.append(newCard);
 
+  const answerBtn = newCard.querySelector('[data-js="answer-button"]');
+    const answer = newCard.querySelector('[data-js="answer"]');
+
+    answerBtn.addEventListener('click', () => {
+        answer.classList.toggle('hidden');
+        if (answer.classList.contains('hidden')) {
+            answerBtn.textContent = 'show answer';
+        } else {
+            answerBtn.textContent = 'hide answer';
+        }
+    });
+
+    const firstBookmark = document.querySelector('[data-js="first-bookmark"]');
+
+    firstBookmark.addEventListener('click', (e) => {
+        // console.log ('first-bookmark', e.target.src) 
+        const isBookmarkFilled = firstBookmark.src.includes("/assets/bookmark_filled.png");
+    
+        // Toggle the source based on the current state
+        if (isBookmarkFilled) {
+            firstBookmark.src = "./assets/bookmark.png";
+        } else {
+            firstBookmark.src = "./assets/bookmark_filled.png";
+        }
+    });
+
+//  const answerBtn = document.querySelector('[data-js="answer-button"]');
+//   const answer = document.querySelector('[data-js="answer"]');
+//     answer.classList.toggle('hidden');
+//     if (answerBtn.textContent === 'show answer'){
+//         answerBtn.textContent = 'hide answer';
+//     } else {
+//         answerBtn.textContent = 'show answer';
+//     }
 })
 
 
